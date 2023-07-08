@@ -11,10 +11,10 @@ body {
 }
 
 .AppBG {
-  background: radial-gradient(ellipse at top center, rgb(0, 187, 255), rgb(195, 161, 27));
+  background: radial-gradient(ellipse at top center, rgb(172, 151, 16), rgb(27, 103, 195));
   background-size: 300% 300%;
   animation: colorSweep 10s ease infinite;
-  -webkit-background: radial-gradient(ellipse at top center, rgb(0, 187, 255), rgb(33, 180, 43));
+  -webkit-background: radial-gradient(ellipse at top center, rgb(172, 151, 16), rgb(27, 103, 195));
   -webkit-background-size: 300% 300%;
   -webkit-animation: colorSweep 10s ease infinite;
 }
