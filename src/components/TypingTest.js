@@ -70,7 +70,7 @@ const TypingTest = () => {
 
     const fetchText = useCallback(() => {
         let randomText = '';
-        for (let i = 0; i < 100; i++) {
+        for (let i = 0; i < 160; i++) {
             randomText += getRandomWord() + ' ';
         }
         setText(randomText.trim());
@@ -147,6 +147,10 @@ const TypingTest = () => {
         fetchText();
     };
 
+    const handleHardRestart = () => {
+        window.location.reload(); // Reload the page
+    };
+
     const calculateWordCount = useCallback(() => {
         const words = text.trim().split(/\s+/);
         const typedWordsCount = words.reduce((count, word, index) => {
@@ -171,34 +175,34 @@ const TypingTest = () => {
     return (
         <div className="Typing">
             <div className="TypingTest">
-                <Title level={2}>Typing Test</Title>
+                <Title level={2} className='titleanimation' style={{ color: 'white' }}>Typing Test</Title>
                 {showMetrics ? (
                     <Row gutter={16} justify="center">
-                        <Col span={24} style={{ marginBottom: 16 }}>
-                            <Text strong>Word Count:</Text> {wordCount}
+                        <Col span={24} className='endscreen' style={{ marginBottom: 16, color: 'white' }}>
+                            <Text strong className='endscreen' style={{color: 'white'}}>Word Count:</Text> {wordCount}
                         </Col>
-                        <Col span={24} style={{ marginBottom: 16 }}>
-                            <Text strong>Accuracy:</Text> {accuracy.toFixed(2)}%
+                        <Col span={24} className='endscreen' style={{ marginBottom: 16, color: 'white'  }}>
+                            <Text strong className='endscreen' style={{color: 'white'}}>Accuracy:</Text> {accuracy.toFixed(2)}%
                         </Col>
-                        <Col span={24} style={{ marginBottom: 16 }}>
-                            <Text strong>Words Per Minute (WPM):</Text>{' '}
+                        <Col span={24} className='endscreen' style={{ marginBottom: 16, color: 'white'  }}>
+                            <Text strong className='endscreen' style={{color: 'white'}}>Words Per Minute (WPM):</Text>{' '}
                             {isFinite(wpm) ? wpm.toFixed(2) : '0'}
                         </Col>
-                        <Col span={24} style={{ marginBottom: 16 }}>
-                            <Text strong>Successfully Typed Words:</Text> {typedWords}
+                        <Col span={24} className='endscreen' style={{ marginBottom: 16, color: 'white'  }}>
+                            <Text strong className='endscreen' style={{color: 'white'}}>Successfully Typed Words:</Text> {typedWords}
                         </Col>
                         <Col span={24}>
-                            <Button type="primary" onClick={handleRestart}>
+                            <Button type="primary" className="custom-button" size='large' onClick={handleRestart}>
                                 Restart
                             </Button>
                         </Col>
                         <Link to="/">
-                        <Button type="primary" className="custom-button" size='large'>Go Home</Button>
+                            <Button type="primary" className="custom-button" size='large'>Go Home</Button>
                         </Link>
                     </Row>
                 ) : (
                     <div>
-                        <div>
+                        <div className='wordwall'>
                             {text.split(/\s+/).map((word, index, array) => (
                                 <React.Fragment key={index}>
                                     <span className={index === currentWordIndex ? 'CurrentWord' : ''}>
@@ -216,9 +220,19 @@ const TypingTest = () => {
                             disabled={false}
                             style={{ marginTop: 32, resize: "none" }}
                         />
-                        <Text strong>Time:</Text> {Math.floor(elapsedTime / 1000)}s
+                        <Text strong className="timertext">
+                            Time:{" "}
+                            <span className={`timervalue ${elapsedTime < 30000 ? "hurry" : ""}`}>
+                                {Math.floor(elapsedTime / 1000)}s
+                            </span>
+                        </Text>
+                        <Col span={24}>
+                            <Button type="primary" className="refresh-button" size='large' onClick={handleHardRestart}>
+                                New Words Please!
+                            </Button>
+                        </Col>
                         <Link to="/" style={{ display: 'block', marginTop: 16 }}>
-                        <Button type="primary" className="custom-button" size='large'>Go Home</Button>
+                            <Button type="primary" className="custom-button" size='large'>Go Home</Button>
                         </Link>
                     </div>
                 )}

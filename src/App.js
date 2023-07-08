@@ -11,7 +11,7 @@ const App = () => {
   return (
     <Router>
       <Layout>
-        <Content style={{ padding: '0px', minHeight: '100vh' }}>
+        <Content className='AppBG' style={{ padding: '0px', minHeight: '100vh'}}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/typing-test" element={<TypingTest />} />
