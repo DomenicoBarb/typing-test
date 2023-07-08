@@ -1,0 +1,21 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Typography, Button } from 'antd';
+import '../App.css';
+
+const { Title, Text } = Typography;
+
+const Home = () => {
+    return (
+        <div className='Home'>
+            <Title style={{ margin: 0 }}>Welcome to the Typing Test App!</Title>
+            <Text className='menu-intro1'>A simple and fun way to test your typing skills,</Text>
+            <Text className='menu-intro2'>with a word tracking highlighter to show progress!</Text>
+            <Link to="/typing-test">
+                <Button type="primary" className="custom-button" size='large'>Start Typing Test</Button>
+            </Link>
+        </div>
+    );
+};
+
+export default Home;

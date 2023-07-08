@@ -1,0 +1,96 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  overflow: hidden;
+}
+
+.Typing {
+  display: flex;
+  justify-content: center;
+  max-width: 90%;
+  margin: 10% 10% 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+.Home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  max-width: 85%;
+  margin: 0 auto;
+  text-align: center;
+  overflow: hidden;
+}
+
+.menu-intro1 {
+  font-size: 25px;
+
+}
+
+.menu-intro2 {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.InputArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  width: 95%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+input {
+  margin-bottom: 20px;
+}
+
+.custom-button {
+  background-color: rgb(0, 190, 193);
+  color: white;
+  border-radius: 6px;
+}
+
+.custom-button:hover {
+  border-radius: 3px;
+}
+
+.CurrentWord {
+  background-color: rgb(255, 251, 0);
+}
+
+@media screen and (max-width: 768px) {
+  .Typing {
+    max-width: 95%;
+    margin: 0 auto 0;
+  }
+}
