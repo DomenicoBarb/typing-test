@@ -448,16 +448,16 @@ input {
 
 @media screen and (max-width: 920px) {
   .App {
-    min-height: 100dvh;
+    min-height: 100vh;
   }
 
   .TypingTest {
-    max-width: 95dvw;
+    max-width: 95vw;
     margin: 0 auto 0;
   }
 
   .Typing {
-    height: 100dvh;
+    height: 100vh;
   }
 
   .InputArea {
@@ -484,6 +484,6 @@ input {
   }
 
   .App {
-    min-height: 100svh;
+    min-height: 100vh;
   }
 }
