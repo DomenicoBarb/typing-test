@@ -554,7 +554,7 @@ const TypingTest = () => {
                             className="InputArea"
                             value={input}
                             onChange={handleInputChange}
-                            placeholder="Start typing..."
+                            placeholder="Click Here And Start typing..."
                             disabled={false}
                             style={{ marginTop: 32, resize: "none" }}
                         />
