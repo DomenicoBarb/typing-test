@@ -2,9 +2,7 @@ html {
   height: 100vh;
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow: hidden;
@@ -13,6 +11,22 @@ html {
 body {
   margin: 0;
   overflow: hidden;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+span {
+  color: rgb(255, 255, 255);
+}
+
+input {
+  margin-bottom: 20px;
 }
 
 .AppBG {
@@ -29,11 +43,9 @@ body {
   0% {
     background-position: 0% 50%;
   }
-
   50% {
     background-position: 100% 50%;
   }
-
   100% {
     background-position: 0% 50%;
   }
@@ -43,11 +55,9 @@ body {
   0% {
     background-position: 0% 50%;
   }
-
   50% {
     background-position: 100% 50%;
   }
-
   100% {
     background-position: 0% 50%;
   }
@@ -89,30 +99,13 @@ body {
   overflow: hidden;
 }
 
-.MainMenuAnimation {
-  -webkit-animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both,
-    text-shadow-drop-bottom 1.2s both;
-  animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both,
-    text-shadow-drop-bottom 1.2s both;
-}
-
-.menu-intro1 {
-  -webkit-animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both,
-    text-shadow-drop-bottom 1.2s both;
-  animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both,
-    text-shadow-drop-bottom 1.2s both;
-  font-size: 25px;
-  color: rgb(255, 255, 255);
-}
-
+.MainMenuAnimation,
+.menu-intro1,
 .menu-intro2 {
-  -webkit-animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both,
-    text-shadow-drop-bottom 1.2s both;
-  animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both,
-    text-shadow-drop-bottom 1.2s both;
+  -webkit-animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both, text-shadow-drop-bottom 1.2s both;
+  animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both, text-shadow-drop-bottom 1.2s both;
   font-size: 25px;
   color: rgb(255, 255, 255);
-  margin-bottom: 10px;
 }
 
 @-webkit-keyframes tracking-in-expand-fwd {
@@ -122,11 +115,9 @@ body {
     transform: translateZ(-700px);
     opacity: 0;
   }
-
   40% {
     opacity: 0.6;
   }
-
   100% {
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
@@ -141,11 +132,9 @@ body {
     transform: translateZ(-700px);
     opacity: 0;
   }
-
   40% {
     opacity: 0.6;
   }
-
   100% {
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
@@ -157,7 +146,6 @@ body {
   0% {
     text-shadow: 0 0 0 rgba(0, 0, 0, 0);
   }
-
   100% {
     text-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
   }
@@ -167,22 +155,23 @@ body {
   0% {
     text-shadow: 0 0 0 rgba(0, 0, 0, 0);
   }
-
   100% {
     text-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
   }
 }
 
-.timertext {
-  color: rgb(255, 255, 255);
+.timertext,
+.hurry {
   -webkit-animation: shadow-drop-br 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   animation: shadow-drop-br 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
+.timertext {
+  color: rgb(255, 255, 255);
+}
+
 .hurry {
   color: rgb(255, 148, 148);
-  -webkit-animation: shadow-drop-br 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  animation: shadow-drop-br 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 .endscreen {
@@ -203,51 +192,40 @@ body {
 }
 
 .wordwall {
-  -webkit-animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both,
-    text-shadow-drop-bottom 1.2s both;
-  animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both,
-    text-shadow-drop-bottom 1.2s both;
+  -webkit-animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both, text-shadow-drop-bottom 1.2s both;
+  animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both, text-shadow-drop-bottom 1.2s both;
   font-size: 25px;
 }
 
 .titleanimation {
   margin-top: 10px;
-  -webkit-animation: wobble-hor-bottom 0.8s both,
-    text-shadow-drop-bottom 1.2s both;
-  animation: wobble-hor-bottom 0.8s both,
-    text-shadow-drop-bottom 1.2s both;
+  -webkit-animation: wobble-hor-bottom 0.8s both, text-shadow-drop-bottom 1.2s both;
+  animation: wobble-hor-bottom 0.8s both, text-shadow-drop-bottom 1.2s both;
 }
 
 @-webkit-keyframes wobble-hor-bottom {
-
-  0%,
-  100% {
+  0%, 100% {
     -webkit-transform: translateX(0%);
     transform: translateX(0%);
     -webkit-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
   }
-
   15% {
     -webkit-transform: translateX(-30px) rotate(-6deg);
     transform: translateX(-30px) rotate(-6deg);
   }
-
   30% {
     -webkit-transform: translateX(15px) rotate(6deg);
     transform: translateX(15px) rotate(6deg);
   }
-
   45% {
     -webkit-transform: translateX(-15px) rotate(-3.6deg);
     transform: translateX(-15px) rotate(-3.6deg);
   }
-
   60% {
     -webkit-transform: translateX(9px) rotate(2.4deg);
     transform: translateX(9px) rotate(2.4deg);
   }
-
   75% {
     -webkit-transform: translateX(-6px) rotate(-1.2deg);
     transform: translateX(-6px) rotate(-1.2deg);
@@ -255,55 +233,37 @@ body {
 }
 
 @keyframes wobble-hor-bottom {
-
-  0%,
-  100% {
+  0%, 100% {
     -webkit-transform: translateX(0%);
     transform: translateX(0%);
     -webkit-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
   }
-
   15% {
     -webkit-transform: translateX(-30px) rotate(-6deg);
     transform: translateX(-30px) rotate(-6deg);
   }
-
   30% {
     -webkit-transform: translateX(15px) rotate(6deg);
     transform: translateX(15px) rotate(6deg);
   }
-
   45% {
     -webkit-transform: translateX(-15px) rotate(-3.6deg);
     transform: translateX(-15px) rotate(-3.6deg);
   }
-
   60% {
     -webkit-transform: translateX(9px) rotate(2.4deg);
     transform: translateX(9px) rotate(2.4deg);
   }
-
   75% {
     -webkit-transform: translateX(-6px) rotate(-1.2deg);
     transform: translateX(-6px) rotate(-1.2deg);
   }
 }
 
-h1 {
-  margin-bottom: 20px;
-}
-
-p {
-  margin-bottom: 10px;
-}
-
-span {
-  color: rgb(255, 255, 255);
-}
-
-input {
-  margin-bottom: 20px;
+.CurrentWord {
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 251, 0);
 }
 
 .refresh-button {
@@ -313,20 +273,23 @@ input {
   margin: 10px 0;
 }
 
-.refresh-button:hover {
-  border-radius: 4px;
-  -webkit-animation: shadow-drop-br 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both, jello-horizontal 0.9s both;
-  animation: shadow-drop-br 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both, jello-horizontal 0.9s both;
-}
-
-.main-screen-button {
+.custom-button {
   background-color: rgb(0, 0, 0);
   color: white;
   border-radius: 8px;
   margin-bottom: 10px;
 }
 
-.main-screen-button:hover {
+.main-screen-button {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.refresh-button:hover,
+.main-screen-button:hover,
+.custom-button:hover {
   border-radius: 4px;
   -webkit-animation: shadow-drop-br 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both, jello-horizontal 0.9s both;
   animation: shadow-drop-br 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both, jello-horizontal 0.9s both;
@@ -337,32 +300,26 @@ input {
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
   }
-
   30% {
     -webkit-transform: scale3d(1.25, 0.75, 1);
     transform: scale3d(1.25, 0.75, 1);
   }
-
   40% {
     -webkit-transform: scale3d(0.75, 1.25, 1);
     transform: scale3d(0.75, 1.25, 1);
   }
-
   50% {
     -webkit-transform: scale3d(1.15, 0.85, 1);
     transform: scale3d(1.15, 0.85, 1);
   }
-
   65% {
     -webkit-transform: scale3d(0.95, 1.05, 1);
     transform: scale3d(0.95, 1.05, 1);
   }
-
   75% {
     -webkit-transform: scale3d(1.05, 0.95, 1);
     transform: scale3d(1.05, 0.95, 1);
   }
-
   100% {
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
@@ -374,32 +331,26 @@ input {
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
   }
-
   30% {
     -webkit-transform: scale3d(1.25, 0.75, 1);
     transform: scale3d(1.25, 0.75, 1);
   }
-
   40% {
     -webkit-transform: scale3d(0.75, 1.25, 1);
     transform: scale3d(0.75, 1.25, 1);
   }
-
   50% {
     -webkit-transform: scale3d(1.15, 0.85, 1);
     transform: scale3d(1.15, 0.85, 1);
   }
-
   65% {
     -webkit-transform: scale3d(0.95, 1.05, 1);
     transform: scale3d(0.95, 1.05, 1);
   }
-
   75% {
     -webkit-transform: scale3d(1.05, 0.95, 1);
     transform: scale3d(1.05, 0.95, 1);
   }
-
   100% {
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
@@ -411,7 +362,6 @@ input {
     -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   }
-
   100% {
     -webkit-box-shadow: 12px 12px 20px -12px rgba(0, 0, 0, 0.35);
     box-shadow: 12px 12px 20px -12px rgba(0, 0, 0, 0.35);
@@ -423,49 +373,20 @@ input {
     -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   }
-
   100% {
     -webkit-box-shadow: 12px 12px 20px -12px rgba(0, 0, 0, 0.35);
     box-shadow: 12px 12px 20px -12px rgba(0, 0, 0, 0.35);
   }
 }
 
-.custom-button {
-  background-color: rgb(0, 0, 0);
-  color: white;
-  border-radius: 8px;
-  margin-bottom: 10px;
-}
-
-.custom-button:hover {
-  border-radius: 4px;
-  -webkit-animation: shadow-drop-br 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both, jello-horizontal 0.9s both;
-  animation: shadow-drop-br 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both, jello-horizontal 0.9s both;
-}
-
-.CurrentWord {
-  color: rgb(0, 0, 0);
-  background-color: rgb(255, 251, 0);
-}
-
 @media screen and (max-width: 920px) {
-  .App {
-    min-height: 100vh;
-  }
-
   .TypingTest {
     max-width: 95vw;
     margin: 0 auto 0;
   }
-
-  .Typing {
-    height: 100vh;
-  }
-
   .InputArea {
     width: 60%;
   }
-
   .wordwall {
     font-size: 12px;
   }
@@ -476,16 +397,10 @@ input {
     width: 30%;
     height: 50%;
   }
-
   .InputArea::placeholder {
-    font-size: 8px; /* Adjust the font size to your preference */
-  }
-
-  .wordwall {
     font-size: 8px;
   }
-
-  .App {
-    min-height: 100vh;
+  .wordwall {
+    font-size: 8px;
   }
 }
