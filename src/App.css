@@ -1,5 +1,5 @@
 html {
-  height: 100%;
+  height: 100vh;
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -202,17 +202,18 @@ body {
 
 .wordwall {
   -webkit-animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both,
-  text-shadow-drop-bottom 1.2s both;
-animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both,
-  text-shadow-drop-bottom 1.2s both;
+    text-shadow-drop-bottom 1.2s both;
+  animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both,
+    text-shadow-drop-bottom 1.2s both;
   font-size: 25px;
 }
 
 .titleanimation {
+  margin-top: 10px;
   -webkit-animation: wobble-hor-bottom 0.8s both,
-  text-shadow-drop-bottom 1.2s both;
+    text-shadow-drop-bottom 1.2s both;
   animation: wobble-hor-bottom 0.8s both,
-  text-shadow-drop-bottom 1.2s both;
+    text-shadow-drop-bottom 1.2s both;
 }
 
 @-webkit-keyframes wobble-hor-bottom {
@@ -332,61 +333,74 @@ input {
 @-webkit-keyframes jello-horizontal {
   0% {
     -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
   }
+
   30% {
     -webkit-transform: scale3d(1.25, 0.75, 1);
-            transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1);
   }
+
   40% {
     -webkit-transform: scale3d(0.75, 1.25, 1);
-            transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1);
   }
+
   50% {
     -webkit-transform: scale3d(1.15, 0.85, 1);
-            transform: scale3d(1.15, 0.85, 1);
+    transform: scale3d(1.15, 0.85, 1);
   }
+
   65% {
     -webkit-transform: scale3d(0.95, 1.05, 1);
-            transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1);
   }
+
   75% {
     -webkit-transform: scale3d(1.05, 0.95, 1);
-            transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1);
   }
+
   100% {
     -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
   }
 }
+
 @keyframes jello-horizontal {
   0% {
     -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
   }
+
   30% {
     -webkit-transform: scale3d(1.25, 0.75, 1);
-            transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1);
   }
+
   40% {
     -webkit-transform: scale3d(0.75, 1.25, 1);
-            transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1);
   }
+
   50% {
     -webkit-transform: scale3d(1.15, 0.85, 1);
-            transform: scale3d(1.15, 0.85, 1);
+    transform: scale3d(1.15, 0.85, 1);
   }
+
   65% {
     -webkit-transform: scale3d(0.95, 1.05, 1);
-            transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1);
   }
+
   75% {
     -webkit-transform: scale3d(1.05, 0.95, 1);
-            transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1);
   }
+
   100% {
     -webkit-transform: scale3d(1, 1, 1);
-            transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
   }
 }
 
@@ -432,10 +446,20 @@ input {
   background-color: rgb(255, 251, 0);
 }
 
-@media screen and (max-width: 768px) {
-  .Typing {
-    max-width: 95%;
+@media screen and (max-width: 920px) {
+  .App {
+    min-height: 100dvh;
+  }
+
+  .TypingTest {
+    max-width: 95dvw;
     margin: 0 auto 0;
+    overflow: visible;
+  }
+
+  .Typing {
+    height: 95dvh;
+    overflow: visible;
   }
 
   .InputArea {
@@ -443,6 +467,25 @@ input {
   }
 
   .wordwall {
-    font-size: 14px;
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .InputArea {
+    width: 30%;
+    height: 50%;
+  }
+
+  .InputArea::placeholder {
+    font-size: 8px; /* Adjust the font size to your preference */
+  }
+
+  .wordwall {
+    font-size: 8px;
+  }
+
+  .App {
+    min-height: 100svh;
   }
 }

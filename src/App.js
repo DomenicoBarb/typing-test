@@ -14,7 +14,7 @@ const App = () => {
   };
 
   return (
-    <Content className='AppBG' style={{ padding: '0px', minHeight: '100vh'}}>
+    <Content className='AppBG' style={{ padding: '0px', maxHeight: '100svh'}}>
       {!startTypingTest ? (
         <Home onStartTypingTest={handleStartTypingTest} />
       ) : (

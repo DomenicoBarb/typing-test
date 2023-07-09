@@ -407,14 +407,20 @@ const TypingTest = () => {
 
     const fetchText = useCallback(() => {
         let randomText = '';
-        for (let i = 0; i < 160; i++) {
+        const wordCount = 180;
+
+        while (randomText.split(' ').length < wordCount + 1) {
             randomText += getRandomWord() + ' ';
         }
-        setText(randomText.trim());
+
+        randomText = randomText.trim().split(' ').slice(0, wordCount).join(' ');
+        setText(randomText);
     }, [getRandomWord]);
+
     useEffect(() => {
         fetchText();
     }, [fetchText]);
+
     useEffect(() => {
         if (isTimerRunning && elapsedTime > 0) {
             const timer = setInterval(() => {
@@ -483,6 +489,7 @@ const TypingTest = () => {
         setTypedWords(typedWordsCount);
         return words.filter((word) => word !== '').length;
     }, [text, currentWordIndex]);
+
     const calculateAccuracy = useCallback(() => {
         const completed = text.slice(0, currentIndex + input.length);
         const numMistakes = Array.from(input).filter(
@@ -525,7 +532,7 @@ const TypingTest = () => {
                         </Button>
                     </Row>
                 ) : (
-                    <div>
+                    <Col>
                         <div className='wordwall'>
                             {text.split(/\s+/).map((word, index, array) => (
                                 <React.Fragment key={index}>
@@ -542,7 +549,7 @@ const TypingTest = () => {
                             onChange={handleInputChange}
                             placeholder="Click Here And Start typing..."
                             disabled={false}
-                            style={{ marginTop: 32, resize: "none" }}
+                            style={{ marginTop: 12, resize: "none" }}
                         />
                         <Text strong className="timertext">
                             Time:{" "}
@@ -558,7 +565,7 @@ const TypingTest = () => {
                         <Button type="button" className="custom-button" size='large' onClick={handleButtonClick}>
                             Go Home
                         </Button>
-                    </div>
+                    </Col>
                 )}
             </div>
         </div>
