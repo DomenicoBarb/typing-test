@@ -503,7 +503,7 @@ const TypingTest = () => {
                 {showMetrics ? (
                     <Row gutter={16} justify="center">
                         <Col span={24} className='endscreen' style={{ marginBottom: 16, color: 'white' }}>
-                            <Text strong className='endscreen' style={{ color: 'white' }}>Word Count:</Text> {wordCount}
+                            <Text strong className='endscreen' style={{ color: 'white' }}>Words on Screen:</Text> {wordCount}
                         </Col>
                         <Col span={24} className='endscreen' style={{ marginBottom: 16, color: 'white' }}>
                             <Text strong className='endscreen' style={{ color: 'white' }}>Accuracy:</Text> {accuracy.toFixed(2)}%
