@@ -488,7 +488,7 @@ const TypingTest = () => {
         const words = text.trim().split(/\s+/);
         const typedWordsCount = words.reduce((count, word, index) => {
             if (index < currentWordIndex) {
-                return count + 1;
+                return count;
             }
             return count;
         }, 0);
