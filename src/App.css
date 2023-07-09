@@ -454,12 +454,10 @@ input {
   .TypingTest {
     max-width: 95dvw;
     margin: 0 auto 0;
-    overflow: visible;
   }
 
   .Typing {
     height: 95dvh;
-    overflow: visible;
   }
 
   .InputArea {
