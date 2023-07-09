@@ -1,5 +1,4 @@
-html,
-body {
+html {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -10,7 +9,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  margin: 0;
+}
+
 .AppBG {
+  height: 100vh;
   background: radial-gradient(ellipse at top center, rgb(172, 151, 16), rgb(27, 103, 195));
   background-size: 300% 300%;
   animation: colorSweep 10s ease infinite;
@@ -60,10 +64,15 @@ body {
 .Typing {
   display: flex;
   justify-content: center;
-  max-width: 90%;
-  margin: 10% 10% 0;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
   text-align: center;
   overflow: hidden;
+}
+
+.TypingTest {
+  width: 95vw;
 }
 
 .Home {
@@ -298,7 +307,7 @@ input {
   background-color: rgb(0, 0, 0);
   color: white;
   border-radius: 8px;
-  margin-top: 10px;
+  margin: 10px 0;
 }
 
 .refresh-button:hover {

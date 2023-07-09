@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Typography, Button, Row, Col } from 'antd';
-import { Link } from 'react-router-dom';
 import '../App.css';
 
 const { Title, Text } = Typography;
@@ -147,10 +146,6 @@ const TypingTest = () => {
         fetchText();
     };
 
-    const handleHardRestart = () => {
-        window.location.reload(); // Reload the page
-    };
-
     const calculateWordCount = useCallback(() => {
         const words = text.trim().split(/\s+/);
         const typedWordsCount = words.reduce((count, word, index) => {
@@ -172,6 +167,11 @@ const TypingTest = () => {
         return ((totalChars - numMistakes) / totalChars) * 100;
     }, [text, input, currentIndex]);
 
+
+    const handleButtonClick = () => {
+        window.location.href = '/';
+    };
+
     return (
         <div className="Typing">
             <div className="TypingTest">
@@ -179,26 +179,26 @@ const TypingTest = () => {
                 {showMetrics ? (
                     <Row gutter={16} justify="center">
                         <Col span={24} className='endscreen' style={{ marginBottom: 16, color: 'white' }}>
-                            <Text strong className='endscreen' style={{color: 'white'}}>Word Count:</Text> {wordCount}
+                            <Text strong className='endscreen' style={{ color: 'white' }}>Word Count:</Text> {wordCount}
                         </Col>
-                        <Col span={24} className='endscreen' style={{ marginBottom: 16, color: 'white'  }}>
-                            <Text strong className='endscreen' style={{color: 'white'}}>Accuracy:</Text> {accuracy.toFixed(2)}%
+                        <Col span={24} className='endscreen' style={{ marginBottom: 16, color: 'white' }}>
+                            <Text strong className='endscreen' style={{ color: 'white' }}>Accuracy:</Text> {accuracy.toFixed(2)}%
                         </Col>
-                        <Col span={24} className='endscreen' style={{ marginBottom: 16, color: 'white'  }}>
-                            <Text strong className='endscreen' style={{color: 'white'}}>Words Per Minute (WPM):</Text>{' '}
+                        <Col span={24} className='endscreen' style={{ marginBottom: 16, color: 'white' }}>
+                            <Text strong className='endscreen' style={{ color: 'white' }}>Words Per Minute (WPM):</Text>{' '}
                             {isFinite(wpm) ? wpm.toFixed(2) : '0'}
                         </Col>
-                        <Col span={24} className='endscreen' style={{ marginBottom: 16, color: 'white'  }}>
-                            <Text strong className='endscreen' style={{color: 'white'}}>Successfully Typed Words:</Text> {typedWords}
+                        <Col span={24} className='endscreen' style={{ marginBottom: 16, color: 'white' }}>
+                            <Text strong className='endscreen' style={{ color: 'white' }}>Successfully Typed Words:</Text> {typedWords}
                         </Col>
                         <Col span={24}>
                             <Button type="primary" className="custom-button" size='large' onClick={handleRestart}>
                                 Restart
                             </Button>
                         </Col>
-                        <Link to="/">
-                            <Button type="primary" className="custom-button" size='large'>Go Home</Button>
-                        </Link>
+                        <Button type="primary" className="custom-button" size='large' onClick={handleButtonClick}>
+                            Go Home
+                        </Button>
                     </Row>
                 ) : (
                     <div>
@@ -227,13 +227,13 @@ const TypingTest = () => {
                             </span>
                         </Text>
                         <Col span={24}>
-                            <Button type="primary" className="refresh-button" size='large' onClick={handleHardRestart}>
+                            <Button type="primary" className="refresh-button" size='large' onClick={handleRestart}>
                                 New Words Please!
                             </Button>
                         </Col>
-                        <Link to="/" style={{ display: 'block', marginTop: 16 }}>
-                            <Button type="primary" className="custom-button" size='large'>Go Home</Button>
-                        </Link>
+                        <Button type="button" className="custom-button" size='large' onClick={handleButtonClick}>
+                            Go Home
+                        </Button>
                     </div>
                 )}
             </div>

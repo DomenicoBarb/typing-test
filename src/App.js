@@ -1,24 +1,26 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Layout } from 'antd';
+import React, { useState } from 'react';
 import Home from './components/Home';
 import TypingTest from './components/TypingTest';
+import { Layout } from 'antd';
 import './App.css';
 
 const { Content } = Layout;
 
 const App = () => {
+  const [startTypingTest, setStartTypingTest] = useState(false);
+
+  const handleStartTypingTest = () => {
+    setStartTypingTest(true);
+  };
+
   return (
-    <Router>
-      <Layout>
-        <Content className='AppBG' style={{ padding: '0px', minHeight: '100vh'}}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/typing-test" element={<TypingTest />} />
-          </Routes>
-        </Content>
-      </Layout>
-    </Router>
+    <Content className='AppBG' style={{ padding: '0px', minHeight: '100vh'}}>
+      {!startTypingTest ? (
+        <Home onStartTypingTest={handleStartTypingTest} />
+      ) : (
+        <TypingTest />
+      )}
+    </Content>
   );
 };
 
