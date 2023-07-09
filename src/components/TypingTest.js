@@ -412,41 +412,33 @@ const TypingTest = () => {
         }
         setText(randomText.trim());
     }, [getRandomWord]);
-
     useEffect(() => {
         fetchText();
     }, [fetchText]);
-
     useEffect(() => {
         if (isTimerRunning && elapsedTime > 0) {
             const timer = setInterval(() => {
                 setElapsedTime((prevElapsedTime) => prevElapsedTime - 1000);
             }, 1000);
-
             return () => clearInterval(timer);
         }
-
         if (elapsedTime === 0) {
             setIsTimerRunning(false);
             setShowMetrics(true);
         }
     }, [isTimerRunning, elapsedTime]);
-
     const handleInputChange = (e) => {
         const inputValue = e.target.value;
         setInput(inputValue);
-
         if (!isTimerRunning) {
             setStartTime(Date.now());
             setIsTimerRunning(true);
         }
-
         const completed = text.slice(0, currentIndex + inputValue.length);
         if (completed === text) {
             setIsTimerRunning(false);
             setShowMetrics(true);
         }
-
         const words = text.trim().split(/\s+/);
         const currentWord = words[currentWordIndex];
         if (inputValue.endsWith(' ') && inputValue.trim() === currentWord) {
@@ -454,20 +446,16 @@ const TypingTest = () => {
             setCurrentWordIndex((prevIndex) => prevIndex + 1); // Move to the next word
             setInput(''); // Clear the input
         }
-
         const wordCount = calculateWordCount();
         setWordCount(wordCount);
-
         const accuracy = calculateAccuracy();
         setAccuracy(accuracy);
-
         if (isTimerRunning && elapsedTime > 0) {
             const elapsedMinutes = (60000 - elapsedTime) / 60000;
             const wordsPerMinute = typedWords / elapsedMinutes;
             setWpm(wordsPerMinute);
         }
     };
-
     const handleRestart = () => {
         setText('');
         setInput('');
@@ -488,14 +476,13 @@ const TypingTest = () => {
         const words = text.trim().split(/\s+/);
         const typedWordsCount = words.reduce((count, word, index) => {
             if (index < currentWordIndex) {
-                return count;
+                return count + 1;
             }
             return count;
         }, 0);
         setTypedWords(typedWordsCount);
         return words.filter((word) => word !== '').length;
     }, [text, currentWordIndex]);
-
     const calculateAccuracy = useCallback(() => {
         const completed = text.slice(0, currentIndex + input.length);
         const numMistakes = Array.from(input).filter(
@@ -504,7 +491,6 @@ const TypingTest = () => {
         const totalChars = Math.max(completed.length, 1);
         return ((totalChars - numMistakes) / totalChars) * 100;
     }, [text, input, currentIndex]);
-
 
     const handleButtonClick = () => {
         window.location.href = '/';
